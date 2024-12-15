@@ -1,0 +1,15 @@
+{
+    "pages": [
+        "pages/yiPay/pay",
+        "pages/yiPay/success/ok",
+        "pages/yiPay/quick/pay"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#29A03A",
+        "navigationBarTitleText": "收银台",
+        "navigationBarTextStyle": "white"
+    },
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents"
+}

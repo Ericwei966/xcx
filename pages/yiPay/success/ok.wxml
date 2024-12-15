@@ -1,0 +1,19 @@
+<page>
+  <view class="success">
+    <image mode="aspectFill" class="payOk" src="https://hsenkj.oss-cn-shenzhen.aliyuncs.com/yuyuan/pay_ok.png" />
+    <view class="ok_text">支付成功</view>
+    <view class="ok_tips">您已成功支付，感谢您的惠顾！</view>
+  </view>
+  <van-divider hairline customStyle="color: #ccc; width:92%;margin:0 auto; border-color: #ccc; font-size: 18px;" />
+
+  <view class="pay_info">
+    <view>收款商户：<text class="shop_name">{{order.shop_name}}</text></view>
+    <view>付款金额：{{order.total_fee}}元</view>
+    <view>支付时间：{{order.pay_time}}</view>
+    <view>支付单号：<text class="trade">{{order.out_trade_no}}</text></view>
+  </view>
+
+  <view class="back">
+    <van-button round block plain color="#000000" bind:click="back"  type="info">返 回</van-button>
+  </view>
+</page>

@@ -1,0 +1,15 @@
+<view class="contain">
+  <block wx:if="{{succ == -1}}">
+    <image class="avatar" mode="aspectFill" src="../../images/wxpay.png" />
+    <text class="nickname">{{payData.msg}}</text>
+    <view>欢迎使用微信支付收银台</view>
+  </block>
+
+  <block wx:if="{{succ == 1}}">
+    <view class="success">
+      <image mode="aspectFill" class="payOk" src="https://hsenkj.oss-cn-shenzhen.aliyuncs.com/yuyuan/pay_ok.png" />
+      <view class="ok_text">支付成功</view>
+      <view class="ok_tips">您已成功支付，感谢您的惠顾！</view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,43 @@
+
+
+<block wx:if="{{payData.yi_code == 1}}">
+
+  <view class="login-status-area">
+    <view class="shop_name">{{payData.shop_name}}</view>
+
+    <view class="pay_area">
+      <view class="pay_title">付款金额</view>
+
+      <view class="pay_input_area">
+        <view class="moeny_icon">¥</view>
+        <view class="pay_input">
+          <input focus="{{show_focus}}" value="{{input_money}}" class="input" bindblur="onCloseNumKey" bindinput="moneyInput" type="digit" placeholder="0.00" />
+        </view>
+      </view>
+
+      <view class="pay_mark">
+        <text class="mark_txt" bindtap='handleOpen'>{{mark_txt}}</text>
+        <text class="mark_btn" bindtap='handleOpen'>{{mark_btn}}</text>
+      </view>
+
+    </view>
+    <button class="btn-action" disabled="{{isLoginLoading}}" loading="{{isLoginLoading}}" type="primary" bindtap="payBill">点击付款</button>
+  </view>
+</block>
+
+
+<block wx:if="{{payData.yi_code == -1}}">
+  <image class="avatar" mode="aspectFill" src="{{warm_img}}" />
+  <text class="nickname">{{payData.msg}}</text>
+  <button class="btn-action" type="primary" bindtap="scan">点击扫码</button>
+</block>
+
+<!--备注输入框-->
+<van-dialog id="van-dialog-input" use-slot title="付款备注" show="{{ show_dialog_input }}" show-cancel-button bind:confirm="onConfirm_dialog_input" bind:close="onClose_dialog_input">
+  <view class="input_dialog">
+    <van-field value="{{ mark_txt }}" bind:input="markInput" show-word-limit	 clearable maxlength="20"  type="textarea" placeholder="请输入备注" autosize border="{{ false }}" />
+  </view>
+</van-dialog>
+
+
+<van-dialog id="van-dialog" />
